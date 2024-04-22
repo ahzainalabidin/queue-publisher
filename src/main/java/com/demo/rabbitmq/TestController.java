@@ -18,6 +18,9 @@ public class TestController {
     public String testAPI(@PathVariable("name") String name) {
         Person person = new Person(1L, name);
         rabbitTemplate.convertAndSend("Mobile", person);
+        rabbitTemplate.convertAndSend("Direct-Exchange", "mobile", person);
+        rabbitTemplate.convertAndSend("Fanout-Exchange", "", person);
+        rabbitTemplate.convertAndSend("Topic-Exchange", "tv.mobile.ac", person);
         return "Success";
     }
 
