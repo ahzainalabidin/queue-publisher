@@ -16,14 +16,14 @@ public class RabbitMQConsumer {
 //        System.out.println(person.getName());
 //    }
 
-    @RabbitListener(queues = "Mobile")
-    public void getMessage(byte[] message) throws IOException, ClassNotFoundException {
-        ByteArrayInputStream bis = new ByteArrayInputStream(message);
-        ObjectInput in = new ObjectInputStream(bis);
-        Person person = (Person) in.readObject();
-        in.close();
-        bis.close();
-        System.out.println(person.getName());
-    }
+//    @RabbitListener(queues = "Mobile")
+//    public void getMessage(byte[] message) throws IOException, ClassNotFoundException {
+//        ByteArrayInputStream bis = new ByteArrayInputStream(message);
+//        ObjectInput in = new ObjectInputStream(bis);
+//        Person person = (Person) in.readObject();
+//        in.close();
+//        bis.close();
+//        System.out.println(person.getName());
+//    }
 
 }
